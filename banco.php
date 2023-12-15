@@ -3,15 +3,21 @@
 //Feito no PHP Storm
 //Importação dos arquivos necessários
 require_once 'src/Conta.php';
+require_once 'src/Pessoa.php';
+//Endereço precisa vir antes de CPF
+require_once 'src/Endereco.php';
 require_once 'src/Titular.php';
 require_once 'src/Cpf.php';
 
-//Criação de novs objetos do tipo CPF
+//Criação de novos objetos do tipo CPF
 $primeiroCpf = new Cpf('525.151.643-76');
 $segundoCpf = new Cpf('535.316.357-82');
 
+//Criação do objeto endereco
+$endereco = new Endereco("Cidade Legal", "Bairro Ok", "Rua Incrível", "65");
+
 //Criação de um objeto do tipo Titular
-$primeiroTitular = new Titular($primeiroCpf, 'Bruno');
+$primeiroTitular = new Titular($primeiroCpf, 'Bruno', $endereco);
 
 //Criação de um objeto do tipo Conta
 $primeiraConta = new Conta($primeiroTitular);
@@ -22,7 +28,7 @@ echo $primeiroTitular->retornarNome() . PHP_EOL;
 echo $primeiroTitular->retornarCpf() . PHP_EOL;
 
 //Criar segundo titular e segunda conta
-$segundoTitular = new Titular($primeiroCpf, 'Felipe');
+$segundoTitular = new Titular($primeiroCpf, 'Felipe', $endereco);
 $segundaConta = new Conta($segundoTitular);
 
 //Realizar um depósito na primeira conta e na segunda conta, sacar somente na segunda e transferir da primeira para
