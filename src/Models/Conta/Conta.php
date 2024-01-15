@@ -1,6 +1,6 @@
 <?php
 
-class Conta
+abstract class Conta
 {
     //Atributos quase sempre serão privados
     private Titular $titular;
@@ -33,6 +33,8 @@ class Conta
     //É sempre bom deixar explicito qual a visibilidade do método.
     public function sacar(float $valorASacar): void
     {
+        $taxa = $valorASacar * $this->taxaSaque();
+        $valorSaque = $valorASacar + $taxa;
         //Métodos podem possuir suas regras. No caso do saque, o valor do saque não pode ser maior que o saldo e
         //também não pode ser 0 nem negativo.
         if($this->saldo < $valorASacar)
@@ -87,5 +89,7 @@ class Conta
     {
         return self::$numeroContas;
     }
+
+    abstract protected function taxaSaque(): float;
 
 }
