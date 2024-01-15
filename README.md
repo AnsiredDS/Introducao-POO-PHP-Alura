@@ -11,3 +11,17 @@ Conceitos aprendidos:
 - Atributos e métodos estáticos;
 - Método construtor e método destrutor;
 - Algumas boas práticas em PHP.
+
+## Avançando com Orientação a Objetos em PHP - Alura 
+
+O projeto foi extendido, trazendo diversas funcionalidades diferentes ao aplicativo do banco, como gerenciar funcionários e suas bonificações, criar tipos diferentes de contas etc. 
+
+Conceitos aprendidos:
+- Herança;
+- Namespace;
+- Autoloader;
+- Classe e métodos abstratos; 
+- Polimorfismo;
+- Interface;
+- Métodos mágicos em PHP;
+- Trait.
